@@ -6,6 +6,7 @@ import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import { Toaster } from 'sonner';
 
+import { AuthContextProvider } from './context/auth';
 import HomePage from './pages/home';
 import LoginPage from './pages/login';
 import NotFoundPage from './pages/not-found';
@@ -35,8 +36,10 @@ const queryClient = new QueryClient();
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <AuthContextProvider>
+        <RouterProvider router={router} />
+      </AuthContextProvider>
+      <Toaster />
     </QueryClientProvider>
-    <Toaster />
   </StrictMode>
 );
