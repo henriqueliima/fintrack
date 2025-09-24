@@ -92,7 +92,7 @@ const LoginPage = () => {
               />
             </CardContent>
             <CardFooter>
-              <Button className="w-full">Fazer login</Button>
+              <Button className="w-full cursor-pointer">Fazer login</Button>
             </CardFooter>
           </Card>
         </form>
